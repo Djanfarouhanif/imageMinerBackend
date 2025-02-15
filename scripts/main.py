@@ -31,9 +31,9 @@ def imageUrl():
             else:
                 image_urls.append(url + src)
 
-        # Afficher les liens des image
-        for img_url in image_urls:
-            print(img_url)
+        # # Afficher les liens des image
+        # for img_url in image_urls:
+        #     print(img_url)
         return image_urls
 
     else:
