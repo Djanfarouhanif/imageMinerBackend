@@ -22,14 +22,21 @@ def download(folder):
             response.raise_for_status() # Vérifier que la requete a reussi
 
             # Déterminer l'extention de l'image (jpg, png, etc)
-            ext = url.split('.')[-1] # split perment de couper le string a se android
-            filename = f"image_{index + 1}.{ext}" # Crée un nom pour l'image
+            if '?' in url :
+                clean = url.split('?')[0] # suprimer tous ce qui se trouver apres ?
+                #ext = clean.split('.')[-1] # extrainre le 
+                filename = clean.split('/')[-1] # Extraire le nom de l'image
+                print(filename, "*********************")
+            else:
+                ext = url.split('.')[-1] # split perment de couper le string a se android
+
+            #filename = f"image_{index + 1}.{ext}" # Crée un nom pour l'image
+                filename = url.split('/')[-1] # extraire le nom sur l'url
             filepath = os.path.join(folder,filename) # Ajouter l'image dans le dossier
 
             # Sauvergarder l'imageUrl
             with open(filepath, "wb") as file:
                 for chunk in response.iter_content(1024):
-                    print(chunk)
                     file.write(chunk)
 
             print(f"Téléchargement du fichier: {filename}")
