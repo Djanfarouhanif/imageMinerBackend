@@ -10,8 +10,10 @@ endpoint = "http://127.0.0.1:8000/api/load/"
 headers = {
     "Content-Type": "application/json"
 }
+url = "https://miniamaker.ai/"
+url = "https://flutter.dev/"
 
-data = data={"url":endpoint}
+data = data={"url":url}
 # response = requests.post(endpoint, data={"url": endpoint})
 response = requests.post(endpoint,json=data, headers=headers )
 
