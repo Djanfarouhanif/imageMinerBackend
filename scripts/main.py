@@ -5,7 +5,7 @@ import html5lib
 
 url = "https://miniamaker.ai/" # Url a scrapper les image
 
-def imageUrl():
+def imageUrl(url):
         
     response = requests.get(url) # Récupérer le contenu HTML de la page
 

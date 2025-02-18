@@ -1,7 +1,7 @@
 import os 
 import aiohttp
 import asyncio
-from main import imageUrl
+from .main import imageUrl
 
 
 # Dossier où stocker les images
@@ -36,9 +36,9 @@ async def download_image(session, url, index):
     except Exception as e:
         print(f"Erreur lors du téléchargement de {url} : {e}")
 
-async def main():
+async def main(url):
     # Gérz le téléchargement de toutes les images en parallèle.abs
-    img_urls = imageUrl()
+    img_urls = imageUrl(url)
 
     async with aiohttp.ClientSession() as session:
         tasks = [download_image(session, url, index) for index, url in enumerate(img_urls)]
@@ -47,4 +47,4 @@ async def main():
 # Lancer le programme asynchrome
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(main(url))
