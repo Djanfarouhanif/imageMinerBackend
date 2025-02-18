@@ -3,14 +3,15 @@ from bs4 import BeautifulSoup
 import html5lib
 
 
-url = "https://miniamaker.ai/" # Url a scrapper les image
+# url = "https://miniamaker.ai/" # Url a scrapper les image
 
 def imageUrl(url):
-        
+    
     response = requests.get(url) # Récupérer le contenu HTML de la page
-
+    print("*******************")
+    
     if response.status_code == 200:
-
+        print("*******************")
         # Créer un objet BeautifulSoup avec html5lib camme parser
         soup = BeautifulSoup(response.content, 'html5lib') 
 
@@ -21,6 +22,8 @@ def imageUrl(url):
         image_urls = []
 
         for img in images:
+           
+            
             # Récupérer l'atribu src de chaque image
             src = img.get('src')
 
