@@ -61,7 +61,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 # Pour autoriser des origines spécifique
 
 CORS_ALLOWED_ORIGINS = [
-'http://localhost:4200'
+'http://localhost:4200', 'https://image-miner-sooty.vercel.app'
 ]
 
 CORS_ALLOW_HEADERS = [
