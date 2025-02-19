@@ -13,7 +13,7 @@ def imageUrl(url):
     if response.status_code == 200:
         print("*******************")
         # Créer un objet BeautifulSoup avec html5lib camme parser
-        soup = BeautifulSoup(response.content, 'html5lib') 
+        soup = BeautifulSoup(response.content, 'lxml') 
 
         # Trouver toutes les balise <img> 
         images = soup.find_all('img')
