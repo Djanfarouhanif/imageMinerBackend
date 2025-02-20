@@ -25,5 +25,3 @@ urlpatterns = [
     path('api/', include('loadImage.urls'))
 ]
 
-if settings.DEBUG: # serve les fichiers médias uniquement en mode développement
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

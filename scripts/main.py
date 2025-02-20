@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import html5lib
+
 
 
 # url = "https://miniamaker.ai/" # Url a scrapper les image
