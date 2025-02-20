@@ -17,4 +17,5 @@ data = data={"url":url}
 # response = requests.post(endpoint, data={"url": endpoint})
 response = requests.post(endpoint,json=data, headers=headers )
 
-print(response)
+print(len(response.content))
+print(response.status_code)
