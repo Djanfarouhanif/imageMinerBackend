@@ -28,6 +28,7 @@ class LoadAPIView(APIView):
             if serializers.is_valid():
                 
                 url = serializers.validated_data.get('url')
+                print(url, '************************')
                 # Fonction pour suprimer ou crée en fonction du presence d'un fichier
                 # downloadImage.control()
                 # fonction asynchrone
@@ -54,4 +55,4 @@ class LoadAPIView(APIView):
                 return Response({"error":"Data is not succes"},status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             print(e)
-            return Response({"eror": e})
+            return Response({"eror": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
