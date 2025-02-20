@@ -7,7 +7,7 @@ from rest_framework import status
 from .serializer import TextSerializer
 from .models import Text
 # from scripts import downloadImage, main
-from scripts.downloadImage import create_zip_from_images
+from scripts import downloadImage 
 import asyncio
 import shutil
 import os
@@ -31,7 +31,7 @@ class LoadAPIView(APIView):
                 # Fonction pour suprimer ou crée en fonction du presence d'un fichier
                 # downloadImage.control()
                 # fonction asynchrone
-                zip_buffer = asyncio.run(create_zip_from_images(url))
+                zip_buffer = asyncio.run(downloadImage.create_zip_from_images(url))
 
                 # Chemin du fichier qui contient les images
                 #image_path = os.path.abspath("images")
